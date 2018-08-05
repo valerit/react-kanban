@@ -1,19 +1,20 @@
-import express from "express";
-import { MongoClient } from "mongodb";
-import passport from "passport";
-import session from "express-session";
-import connectMongo from "connect-mongo";
-import compression from "compression";
-import serveStatic from "express-static-gzip";
-import helmet from "helmet";
-import favicon from "serve-favicon";
-import logger from "morgan";
-import dotenv from "dotenv";
-import renderPage from "./renderPage";
-import configurePassport from "./passport";
-import api from "./routes/api";
-import auth from "./routes/auth";
-import fetchBoardData from "./fetchBoardData";
+const express = require('express')
+const MongoClient = require('mongodb').MongoClient
+const passport = require('passport')
+const session = require('express-session')
+const connectMongo = require('connectMongo')
+const compression = require('compression')
+const serveStatic = require('express-static-gzip')
+const helmet = require('helmet')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const dotenv = require('dotenv')
+
+const renderPage = require('./renderPage')
+const configurePassport = require('./passport')
+const api = require('./routes/api')
+const auth = require('./routes/auth')
+const fetchBoardData = require('./fetchBoardData')
 
 // Load environment variables from .env file
 dotenv.config();
