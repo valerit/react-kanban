@@ -4,6 +4,7 @@
   "description": "An open source kanban application created with React and Redux.",
   "main": "dist/server.js",
   "scripts": {
+    "start": "node src/server/server.js",
     "build": "webpack --watch --mode development",
     "build:prod": "BABEL_ENV=production webpack --mode production",
     "serve": "nodemon dist/server.js",

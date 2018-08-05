@@ -1,13 +1,14 @@
-import { readFileSync } from "fs";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import { StaticRouter } from "react-router";
-import { HeadCollector } from "react-head";
-import { resetContext } from "react-beautiful-dnd";
-import App from "../app/components/App";
-import rootReducer from "../app/reducers";
+const { readFileSync } = require('fs')
+const React = require('react')
+const { renderToString }= require('react-dom/server')
+const { createStore } = require('redux')
+const { Provider } = require('react-redux')
+const { StaticRouter } = require('react-router')
+const { HeadCollector } = require('react-head')
+const { resetContext } = require('react-beautiful-dnd')
+
+const App = require('../app/components/App')
+const rootReducer = require('../app/reducers')
 
 // Get the manifest which contains the names of the generated files. The files contain hashes
 // that change every time they are updated, which enables aggressive caching.
@@ -69,4 +70,4 @@ const renderPage = (req, res) => {
   res.send(html);
 };
 
-export default renderPage;
+module.exports = renderPage;
